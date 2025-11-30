@@ -1,0 +1,129 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+body{
+    background-color: #003454;
+    color: #fff;
+}
+
+.wrapper {
+    overflow: clip;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.page {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+}
+
+[class*='__container']{
+    margin: 0 auto;
+    max-width: 1250px;
+    padding: 0 2rem;
+}
+
+.header__logo{
+    margin: 2rem 0;
+    max-width: 15rem;
+}
+.page__container{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-height: 100%;
+}
+
+.page__description{
+    flex: 0 1 35%;
+    max-height: 100%;
+}
+.page__header{
+    font-family: Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 1.8rem;
+}
+.page__text{
+    max-width: 70%;
+    line-height: 1.8;
+}
+
+.page__image {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    margin-top: -5%;
+}
+.page__image::before{
+    content: '';
+    position: absolute;
+    left: -25%;
+    top: -40%;
+    width: 300%;
+    height: 300%;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: -1;
+}
+.page__image img{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer{
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #003454;
+}
+
+@media (max-width:1024px) {
+    .page__image::before{
+        left: -15%;
+    }
+}
+@media (max-width:768px) {
+    .header__logo{
+        max-width: 12rem;
+        margin: 1rem 0;
+    }
+    .page__container{
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .page__description{
+        flex-basis: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .page__header{
+        font-size: 2rem;
+        margin-bottom: .5rem;
+        text-align: center;
+    }
+    .page__image {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+     
+    }
+    .page__image::before{
+        width: 0;
+        height: 0;
+    }
+    .page__image img{
+        max-width: 20rem;
+    }
+    .footer{
+        color: #fff;
+    }
+}
